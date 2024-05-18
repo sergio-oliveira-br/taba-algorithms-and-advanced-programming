@@ -23,7 +23,7 @@ import java.util.*;
 /** This will sort the file */
 public class Sorter
 {
-    public void sortFile(String filePath, int columnIndex) throws IOException
+    public String sortFile(String filePath, int columnIndex) throws IOException
     {
         //Instantiating the classes
         BufferedReader myBufferedReader = new BufferedReader(new FileReader(filePath));
@@ -54,6 +54,8 @@ public class Sorter
 
         //Close the BufferedReader
         myBufferedReader.close();
+
+        return rows.toString();
     }
 
     public Comparator<Row> getComparator(int columnIndex)

@@ -34,7 +34,7 @@ public class MultiThreadSort extends Thread
     //Creat an object
     Reader myReader = new Reader();
     Writer myWriter = new Writer();
-    List<String> data;
+    Sorter mySorter = new Sorter();
 
     //Constructor
     public MultiThreadSort(String filePath, int columnIndex) throws FileNotFoundException
@@ -49,9 +49,9 @@ public class MultiThreadSort extends Thread
         try
         {
             //Sorting...
-            Sorter mySorter = new Sorter();
             mySorter.sortFile(filePath, columnIndex);
 
+            //Reading...
             List<String> data = myReader.readData(filePath);
 
             boolean fileSaved = myWriter.saveFile(data, columnIndex,filePath);

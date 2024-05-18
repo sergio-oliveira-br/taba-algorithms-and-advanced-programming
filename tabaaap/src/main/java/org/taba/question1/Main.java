@@ -113,7 +113,6 @@ public class Main
                     MultiThreadSort myMultiThread = new MultiThreadSort(filePath, i);
                     myMultiThread.start();
 
-
                     try
                     {
                         myMultiThread.join(); //Wait for the thread
@@ -128,7 +127,8 @@ public class Main
             case 6:
                 System.out.println("Adding a new record...");
 
-                String[] newRecord = {"", "John", "Moore", "IT", "1141", "505"};
+                                    //ID, FistName, SecondName, Depart, Wages, Rate
+                String[] newRecord = {"", "Sergio", "Oliveira123", "IT", "999", "01299"};
                 try
                 {
                     myRecordAdder.addRecord(filePath, newRecord);
